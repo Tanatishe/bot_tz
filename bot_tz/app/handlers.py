@@ -15,14 +15,15 @@ async def cmd_start(message:Message):
 
 @router.message(F.text)
 async def callback_catalog(message:Message):
-    if F.text == 'Каталог':
+    if message.text == 'Каталог':
         await message.answer('Catalog:', reply_markup=kb.catalog)
-    elif F.text == 'Корзина':
+    elif message.text == 'Корзина':
         await message.answer('BASKET')        
-    elif F.text == 'FAQ':
+    elif message.text == 'FAQ':
         await message.answer('FAQ FOR U')
     else:
         await message.answer('neponyatno')
+    
 
 
 
